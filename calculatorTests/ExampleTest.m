@@ -7,7 +7,9 @@
 //
 
 #import "ExampleTest.h"
-
+#import "KIFUITestActor+EXAdditions.h"
 @implementation ExampleTest
+
+
 
 @end

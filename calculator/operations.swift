@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class operations {
+    
+    //   func Addition
+}
+

@@ -1,9 +1,9 @@
-//
+    //
 //  ViewController.swift
 //  calculator
 //
-//  Created by Petri W on 08/11/2016.
-//  Copyright © 2016 Petri W. All rights reserved.
+//  Created by Petri Wunsch on 08/11/2016.
+//  Copyright © 2016 Petri Wunsch . All rights reserved.
 //
 
 import UIKit
@@ -26,9 +26,10 @@ class ViewController: UIViewController {
     @IBAction func tappedPlus(sender: AnyObject) {
     }
    
-    func tappedNumber(num:Int){
+    func tappedNumber(num:Int)-> String{
           labelString = labelString.stringByAppendingString("\(num)")
         updateText()
+        return labelString
     }
    
     @IBAction func tapped0(sender: AnyObject) {
@@ -43,6 +44,10 @@ class ViewController: UIViewController {
     @IBAction func tapped8(sender: AnyObject) {tappedNumber(8)}
     @IBAction func tapped9(sender: AnyObject) {tappedNumber(9)}
     
+    @IBAction func tappedC(sender: AnyObject) {
+        labelString = "0"
+        updateText()
+    }
     func updateText(){
         label.text = labelString
       
