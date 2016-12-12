@@ -7,9 +7,14 @@
 //
 
 import XCTest
+import UIKit
+
 
 class calculatorUITests: XCTestCase {
-        
+    
+    let app = XCUIApplication()
+    
+    
     override func setUp() {
         super.setUp()
         
@@ -28,9 +33,33 @@ class calculatorUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testButtonCount(){
+        XCTAssertEqual(app.buttons.count,14,"Shuld be 14")
+    }
+    func testInsertText() {
+        app.buttons["9"].tap()
+        app.buttons ["8"].tap()
+        app.buttons ["7"].tap()
+       XCTAssertEqual(app.staticTexts["numberField"].label, "0987", "Should be 11")
+    }
+    func testClearText(){
+       
+        app.buttons ["9"].tap()
+        app.buttons ["8"].tap()
+        app.buttons ["7"].tap()
+        app.buttons ["C"].tap()
+        XCTAssertEqual(app.staticTexts["numberField"].label, "0", "Should be 0")
+        
+        
+        
     }
     
+    
+}
+
+extension XCUIElement{
+    func tapAtPosition(position: CGPoint) {
+        let cooridnate = self.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0)).withOffset(CGVector(dx: position.x, dy: position.y))
+        cooridnate.tap()
+    }
 }
