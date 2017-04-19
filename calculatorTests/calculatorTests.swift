@@ -30,7 +30,7 @@ class calculatorTests: XCTestCase {
     func testExample() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let  vc = storyboard.instantiateViewControllerWithIdentifier("ViewController") as UIViewController
-        let v
+        let 
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
